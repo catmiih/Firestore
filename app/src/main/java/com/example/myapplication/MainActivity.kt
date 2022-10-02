@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -21,7 +22,9 @@ class MainActivity : AppCompatActivity() {
         val edtEndereco: EditText = findViewById(R.id.edtEndereco)
         val edtBairro: EditText = findViewById(R.id.edtBairro)
         val edtCep: EditText = findViewById(R.id.edtCep)
+
         val btnCadastrar: Button = findViewById(R.id.btnCadastrar)
+        val btnListar: Button = findViewById(R.id.btnListar)
 
         btnCadastrar.setOnClickListener{
             // Create a new user with a first and last name
@@ -36,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             db.collection("cadastro")
                 .add(pessoaFisica)
                 .addOnSuccessListener { documentReference ->
-                    Toast.makeText(this, "Registro realizado com sucesso ${documentReference.id}",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Registro realizado com sucesso! ID: ${documentReference.id}",Toast.LENGTH_LONG).show()
                     edtNome.setText(null)
                     edtEndereco.setText(null)
                     edtBairro.setText(null)
@@ -45,6 +48,11 @@ class MainActivity : AppCompatActivity() {
                 .addOnFailureListener { e ->
                     Log.w(TAG, "Error adding document", e)
                 }
+        }
+
+        btnListar.setOnClickListener{
+            val intent = Intent(this, ListarActivity::class.java)
+            startActivity(intent)
         }
 
     }

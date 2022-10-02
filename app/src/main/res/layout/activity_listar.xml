@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="50dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lista de Dados"
+        android:layout_gravity="center_horizontal"
+        android:textSize="25dp"/>
+
+    <TableLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <TableRow>
+            <EditText
+                android:id="@+id/edtPesq"
+                android:hint="Insira o Id:"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"/>
+            <Space
+                android:layout_width="50dp"/>
+            <Button
+                android:id="@+id/btnBuscar"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:text="Buscar"/>
+        </TableRow>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="Resultados:"
+            android:textSize="20dp"/>
+
+        <EditText
+            android:id="@+id/txtResultId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:hint="ID:"/>
+
+        <EditText
+            android:id="@+id/txtResultNome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Nome:"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/txtResultEnd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Endereço"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/txtResultBairro"
+            android:hint="Bairro:"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/txtResultCep"
+            android:layout_width="match_parent"
+            android:hint="Cep"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"/>
+    </TableLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <Button
+        android:id="@+id/btnEditar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Atualizar Dados"/>
+    <Button
+        android:id="@+id/btnExcluir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Excluir Registro"/>
+</LinearLayout>
